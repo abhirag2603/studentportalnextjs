@@ -1,9 +1,7 @@
-
-
 export default function Announcements() {
     const announcements = [
-        { id: 1, img: 'sun.png', message: 'On account of Independence Day, August 15th will be a holiday.' },
-        { id: 2, img: 'clipboard-text.png', message: 'Reminder to finish your assignments and submit them by Monday.' },
+        { id: 1, img: '/sun.png', message: 'On account of Independence Day, August 15th will be a holiday.' },
+        { id: 2, img: '/clipboard-text.png', message: 'Reminder to finish your assignments and submit them by Monday.' },
     ];
 
     return (
@@ -13,7 +11,11 @@ export default function Announcements() {
                 <div className="flex flex-col">
                     {announcements.map((announcement) => (
                         <div key={announcement.id} className="bg-[#F8F8F8] flex items-center justify-start gap-2 rounded-lg p-3">
-                            <img src={announcement.img} className="w-8 h-8" alt="Announcement Icon" />
+                            <img 
+                                src={announcement.img} 
+                                className="w-8 h-8" 
+                                alt={`Announcement icon for: ${announcement.message}`} 
+                            />
                             <p className="text-sm text-[#4749B3] text-left">{announcement.message}</p>
                         </div>
                     ))}

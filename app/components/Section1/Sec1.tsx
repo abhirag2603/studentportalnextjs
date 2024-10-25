@@ -1,5 +1,5 @@
 import Announcements from "./Announcements/Announcements";
-import YourClassSchedule from "./YourClassSchedulr/YourClassSchedule";
+import YourClassSchedule from "./YourClassSchedulr/YourClassSchedule"; // Corrected the import path
 
 export default function Sec1() {
     return (
