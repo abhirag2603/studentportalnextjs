@@ -56,10 +56,10 @@ const VidModal: React.FC<VidModalProps> = ({ isOpen, onClose }) => {
 
                 <div className="rounded-3xl flex-grow flex flex-col items-center justify-center overflow-hidden relative">
                     <Image
-                        src='Rectangle 1.png'
+                        src='/Rectangle 1.png'
                         alt="Modal Content"
                         className="w-full h-full object-cover"
-                        width={500} // Adjust width as needed
+                        width={500} // Adjust width as needed/
                         height={300} // Adjust height as needed
                     />
 
