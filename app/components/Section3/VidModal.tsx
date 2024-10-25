@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import Image from "next/image";
 
 interface VidModalProps {
     isOpen: boolean;
     onClose: () => void;
-    imageSrc: string;
 }
 
-const VidModal: React.FC<VidModalProps> = ({ isOpen, onClose, imageSrc }) => {
+const VidModal: React.FC<VidModalProps> = ({ isOpen, onClose }) => {
     const modalRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -30,12 +30,12 @@ const VidModal: React.FC<VidModalProps> = ({ isOpen, onClose, imageSrc }) => {
     if (!isOpen) return null;
 
     return (
-        <div 
-            className="fixed z-50 top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50" 
-            role="dialog" 
+        <div
+            className="fixed z-50 top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50"
+            role="dialog"
             aria-modal="true"
         >
-            <div 
+            <div
                 ref={modalRef}
                 tabIndex={-1}
                 className="bg-[#4749B3] rounded-3xl max-w-[90%] max-h-[85%] w-full h-full flex flex-col"
@@ -55,43 +55,51 @@ const VidModal: React.FC<VidModalProps> = ({ isOpen, onClose, imageSrc }) => {
                 </div>
 
                 <div className="rounded-3xl flex-grow flex flex-col items-center justify-center overflow-hidden relative">
-                    <img 
-                        src={imageSrc} 
-                        alt="Modal Content" 
-                        className="w-full h-full object-cover" 
+                    <Image
+                        src='Rectangle 1.png'
+                        alt="Modal Content"
+                        className="w-full h-full object-cover"
+                        width={500} // Adjust width as needed
+                        height={300} // Adjust height as needed
                     />
-                    
+
                     <div className="absolute bottom-20 right-20 text-white text-lg">
                         35:28 / 1:20:21
                     </div>
 
                     <div className="absolute bottom-16 left-0 right-0 flex justify-center mb-4">
-                        <img 
-                            src='Group 2.png' 
-                            alt="Video Player Line" 
-                            className="w-[90%] object-contain" 
+                        <Image
+                            src='/Group 2.png'
+                            alt="Video Player Line"
+                            width={900} // Use an approximate width since Next.js requires fixed width/height
+                            height={500} // Adjust as needed to fit the container
+                            className="object-contain w-[90%]"
                         />
                     </div>
 
                     <div className="absolute bottom-8 px-20 left-0 right-0 flex justify-between items-center">
-                        <img 
-                            src='Group 1.png' 
-                            alt="Play" 
-                            className="w-28 h-10 cursor-pointer" 
-                            onClick={() => console.log('Play clicked')} 
+                        <Image
+                            src='/Group 1.png'
+                            alt="Play"
+                            width={112} // equivalent to w-28
+                            height={40} // equivalent to h-10
+                            className="cursor-pointer"
+
                         />
                         <div className='flex gap-3'>
-                            <img 
-                                src='volume-cross.png' 
-                                alt="Sound" 
-                                className="w-10 h-10 cursor-pointer" 
-                                onClick={() => console.log('Sound clicked')} 
+                            <Image
+                                src='/volume-cross.png'
+                                alt="Sound"
+                                width={40}
+                                height={40}
+                                className="cursor-pointer"
                             />
-                            <img 
-                                src='Icon Frame.png' 
-                                alt="Fullscreen" 
-                                className="w-10 h-10 cursor-pointer" 
-                                onClick={() => console.log('Fullscreen clicked')} 
+                            <Image
+                                src='/Icon Frame.png'
+                                alt="Fullscreen"
+                                width={40}
+                                height={40}
+                                className="cursor-pointer"
                             />
                         </div>
                     </div>

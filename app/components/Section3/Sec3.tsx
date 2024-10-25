@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Modal from './Modal';
 import VidModal from './VidModal';
 
@@ -10,13 +11,14 @@ export default function Sec3() {
     const [selectedWeek, setSelectedWeek] = useState('This week');
     const [selectedSubject, setSelectedSubject] = useState('All subjects');
 
-    const handleWeekChange = (event: any) => {
+    const handleWeekChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedWeek(event.target.value);
     };
-
-    const handleSubjectChange = (event: any) => {
+    
+    const handleSubjectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedSubject(event.target.value);
     };
+    
 
     const handleOpenModals = () => setIsModalsOpen(true);
     const handleCloseModals = () => setIsModalsOpen(false);
@@ -24,12 +26,12 @@ export default function Sec3() {
     const handleCloseVidModal = () => setIsVidModalOpen(false);
 
     return (
-        <div >
+        <div>
             <p className="font-bold text-2xl lg:text-2xl text-[#3A3A3A]">Access Class Recordings</p>
             <div className="bg-white lg:max-w-md md:max-w-sm shadow-md rounded-3xl px-3 md:px-5 py-6 md:py-6">
                 <div className="relative w-full">
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <img src="/search-normal.png" alt="Search" className="w-4 h-4 md:w-5 md:h-5 text-gray-500" />
+                        <Image src="/search-normal.png" alt="Search" width={20} height={20} className="w-4 h-4 md:w-5 md:h-5 text-gray-500" />
                     </div>
                     <input type="text" className="block w-full p-2 pl-10 md:pl-12 text-gray-700 bg-gray-100 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Search for class recordings" />
                 </div>
@@ -61,8 +63,8 @@ export default function Sec3() {
                             </div>
                         </div>
                         <div className="relative h-16 w-20 md:h-16 md:w-24 mt-3 md:mt-0">
-                            <img className="h-full w-full" src="Mask group.png" />
-                            <img src="video-circle.png" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 transition-opacity duration-300 group-hover:opacity-0" />
+                            <Image src="/Mask group.png" alt="Thumbnail" width={80} height={64} className="h-full w-full" />
+                            <Image src="/video-circle.png" alt="Play Button" width={40} height={40} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 transition-opacity duration-300 group-hover:opacity-0" />
                             <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white text-xs md:text-sm whitespace-nowrap">Play now</p>
                         </div>
                     </div>
@@ -78,8 +80,8 @@ export default function Sec3() {
                             </div>
                         </div>
                         <div className="relative h-16 w-20 md:h-16 md:w-24 mt-3 md:mt-0">
-                            <img className="h-full w-full" src="Mask group.png" />
-                            <img src="video-circle.png" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 transition-opacity duration-300 group-hover:opacity-0" />
+                            <Image src="/Mask group.png" alt="Thumbnail" width={80} height={64} className="h-full w-full" />
+                            <Image src="/video-circle.png" alt="Play Button" width={40} height={40} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 transition-opacity duration-300 group-hover:opacity-0" />
                             <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white text-xs md:text-sm whitespace-nowrap">Play now</p>
                         </div>
                     </div>
@@ -95,8 +97,8 @@ export default function Sec3() {
                             </div>
                         </div>
                         <div className="relative h-16 w-20 md:h-16 md:w-24 mt-3 md:mt-0">
-                            <img className="h-full w-full" src="Mask group2.png" />
-                            <img src="video-circle.png" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 transition-opacity duration-300 group-hover:opacity-0" />
+                            <Image src="/Mask group2.png" alt="Thumbnail" width={80} height={64} className="h-full w-full" />
+                            <Image src="/video-circle.png" alt="Play Button" width={40} height={40} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 transition-opacity duration-300 group-hover:opacity-0" />
                             <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white text-xs md:text-sm whitespace-nowrap">Play now</p>
                         </div>
                     </div>
@@ -111,16 +113,15 @@ export default function Sec3() {
                                 <p className="flex flex-col justify-end text-gray-500 text-xs md:text-xs lg:text-sm">24th October, 2024</p>
                             </div>
                         </div>
-                        <div className="relative h-12 :w-16 lg:h-16 lg:w-24 mt-3 md:mt-0">
-                            <img className="h-full w-full" src="Mask group.png" />
-                            <img src="video-circle.png" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 transition-opacity duration-300 group-hover:opacity-0" />
+                        <div className="relative h-16 w-20 md:h-16 md:w-24 mt-3 md:mt-0">
+                            <Image src="/Mask group.png" alt="Thumbnail" width={80} height={64} className="h-full w-full" />
+                            <Image src="/video-circle.png" alt="Play Button" width={40} height={40} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 transition-opacity duration-300 group-hover:opacity-0" />
                             <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white text-xs md:text-sm whitespace-nowrap">Play now</p>
                         </div>
                     </div>
             </div>
-           
             <Modal isOpen={isModalsOpen} onClose={handleCloseModals} />
-            <VidModal isOpen={isVidModalOpen} onClose={handleCloseVidModal} imageSrc='Rectangle 1.png' />
+            <VidModal isOpen={isVidModalOpen} onClose={handleCloseVidModal} />
         </div>
-    );
+    )
 }

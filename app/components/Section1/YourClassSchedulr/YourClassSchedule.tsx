@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function YourClassSchedule() {
     const classes = [
         {
@@ -10,7 +12,7 @@ export default function YourClassSchedule() {
             time: '5:00 - 5:50 PM',
             accentL: '#9899DF',
             accentH: '#474B93',
-            img: '/cam1.png', // Added forward slash for public folder
+            img: '/cam1.png',
             bg: '#F8F8F8',
         },
         {
@@ -23,7 +25,7 @@ export default function YourClassSchedule() {
             time: '6:30 - 7:15 PM',
             accentL: 'white',
             accentH: 'white',
-            img: '/cam2.png', // Added forward slash for public folder
+            img: '/cam2.png',
             bg: '#E66DFF',
         },
         {
@@ -36,7 +38,7 @@ export default function YourClassSchedule() {
             time: '5:00 - 5:50 PM',
             accentL: '#9899DF',
             accentH: '#474B93',
-            img: '/cam1.png', // Added forward slash for public folder
+            img: '/cam1.png',
             bg: '#F8F8F8',
         },
         {
@@ -49,7 +51,7 @@ export default function YourClassSchedule() {
             time: '5:00 - 5:50 PM',
             accentL: '#EFABFD',
             accentH: '#E66DFF',
-            img: '/cam3.png', // Added forward slash for public folder
+            img: '/cam3.png',
             bg: '#F8F8F8',
         },
     ];
@@ -62,10 +64,11 @@ export default function YourClassSchedule() {
                     {classes.map((classItem) => (
                         <div key={classItem.id} className="flex items-center px-2 rounded-lg py-4 w-full justify-between h-16 gap-2 mt-5" style={{ backgroundColor: classItem.bg }}>
                             <div className="flex flex-row items-center gap-2">
-                                <img 
+                                <Image 
                                     src={classItem.img} 
-                                    className="w-8 h-8 md:w-8 md:h-8" // Adjusted to standard Tailwind size classes
-                                    alt={`${classItem.subject} class icon`} // Improved alt text
+                                    width={32} // Adjust the width as needed
+                                    height={32} // Adjust the height as needed
+                                    alt={`${classItem.subject} class icon`} 
                                 />
                                 <div className="flex flex-col">
                                     <p className="md:text-sm text-xs" style={{ color: classItem.accentL }}>

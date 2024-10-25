@@ -2,8 +2,6 @@ import Navbar from "./components/Navbar";
 import Sec2 from "./components/Section2/Sec2";
 import Sec1 from "./components/Section1/Sec1";
 import Sec3 from "./components/Section3/Sec3";
-import Announcements from "./components/Section1/Announcements/Announcements"; // Make sure this is used if needed
-import YourClassSchedule from "./components/Section1/YourClassSchedulr/YourClassSchedule"; // Ensure this component name is correct
 
 export default function Home() {
   return (
